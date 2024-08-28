@@ -6,6 +6,7 @@ class DataCollector:
         self.get_weather_data(latitude, longitude, weather_api)
         self.news = ''
         self.get_news_data(news_api)
+        self.random_fact = self.get_random_fact()
 
     def get_weather_data(self, latitude, longitude, weather_api):
         weather_parameters = {
@@ -53,7 +54,18 @@ class DataCollector:
         news_data = news_response.json()['results']
 
         for item in news_data:
-            self.news += f"{item['title']}: {item['description']}\n\n"
+            self.news += f"{item['title']}: {item['description']}."
+
+    def get_random_fact(self):
+        fact_response = requests.get(url="https://uselessfacts.jsph.pl/api/v2/facts/today")
+
+        fact = fact_response.json()['text']
+        print(fact)
+
+        return fact
+
+
+        news_response.raise_for_status()
 
 
 #TODO GET TODO LIST FROM GOOGLE SHEETS OR TODOIST API
