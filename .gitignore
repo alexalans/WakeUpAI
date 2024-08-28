@@ -1,5 +1,7 @@
 notes.txt
 test.py
+news_bard.py
+weather_bard.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
