@@ -65,16 +65,9 @@ for i in range(5):
         pyautogui.click(x=500, y=500)
         break
 
-try:
-    pyautogui.scroll(-2000)
-    pyautogui.click('pyautogui_images/copy_lyrics2.png')
-except ImageNotFoundException:
-    time.sleep(20)
-    pyautogui.scroll(-1500)
-    pyautogui.click('pyautogui_images/copy_lyrics2.png')
-    time.sleep(1)
-finally:
-    pyautogui.hotkey('ctrl', 'tab')
+pyautogui.hotkey('ctrl', 'shift', 'c')
+time.sleep(1)
+pyautogui.hotkey('ctrl', 'tab')
 
 time.sleep(1)
 pyautogui.click('pyautogui_images/enter_lyrics2.png')
@@ -98,7 +91,7 @@ pyautogui.hotkey('ctrl', 'a', 'delete')
 time.sleep(0.1)
 pyautogui.write(f"{test_title}")
 
-pyautogui.scroll(-250)
+pyautogui.scroll(-1000)
 time.sleep(1)
 pyautogui.click('pyautogui_images/create.png')
 
